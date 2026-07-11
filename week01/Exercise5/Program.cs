@@ -4,22 +4,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        // 1. Display the welcome greeting
+        // Display a welcome message to the user
         DisplayWelcome();
 
-        // 2. Call prompt functions and store their return values
+        // Call prompt functions and store return values  
         string userName = PromptUserName();
         int userNumber = PromptUserNumber();
 
-        // 3. Calculate the mathematical square
+        // Calculate the mathematical square
         int squaredNumber = SquareNumber(userNumber);
 
-        // 4. Print the final results matching the formatting
+        // Print the final results matching the formatting
         DisplayResult(userName, squaredNumber);
     }
 
     // --- FUNCTION DEFINITIONS ---
-
     static void DisplayWelcome()
     {
         Console.WriteLine("Welcome to the program!");
