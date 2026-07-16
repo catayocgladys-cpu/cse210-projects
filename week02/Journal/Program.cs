@@ -49,13 +49,13 @@ class Program
             {
                 Console.Write("Enter filename to save: ");
                 string filename = Console.ReadLine();
-                myJournal.LoadFromFile(filename);
+                myJournal.SaveToFile(filename);
             }
             else if (userChoice == "4")
             {
                 Console.Write("Enter filename to load: ");
                 string filename = Console.ReadLine();
-                myJournal.SaveToFile(filename);
+                myJournal.LoadFromFile(filename);
             }
             else if (userChoice == "5")
             {
