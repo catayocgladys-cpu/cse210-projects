@@ -27,10 +27,10 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"{entry._date}|{entry._promptText}|{entry._entryText}");
+                outputFile.WriteLine($"{entry._date}|{entry._promptText}|{entry._entryText}|{entry._mood}");
             }
         }
-        Console.WriteLine("Journal saved successfully.");
+        
     }
 
     public void LoadFromFile(string file)
@@ -42,21 +42,18 @@ public class Journal
 
         foreach (string line in lines)
         {
-            string[] parts = line.Split(new string[] { "|" }, StringSplitOptions.None);
+            string[] parts = line.Split("|");
 
-            if (parts.Length == 3)
-            {
-                Entry loadedEntry = new Entry();
-                // assign the components 
-                loadedEntry._date = parts[0];
-                loadedEntry._promptText = parts[1];
-                loadedEntry._entryText = parts[2];
+            Entry newEntry = new Entry();
+            newEntry._date = parts[0];
+            newEntry._promptText = parts[1];
+            newEntry._entryText = parts[2];
+            newEntry._mood = parts[3];
 
-                _entries.Add(loadedEntry);
-            }
+            _entries.Add(newEntry);
+
         }
-
-        Console.WriteLine("Journal loaded successfully.");
+              
     }
                 
 }
